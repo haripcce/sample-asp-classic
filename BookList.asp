@@ -34,31 +34,62 @@ th {
 
 
             %>
+
+        <%
+set Con=Server.CreateObject("ADODB.Connection")
+Con.ConnectionString = "Provider=SQLOLEDB;Data Source =localhost;Database=aspclassic;User Id=sa;Password=Hari1990"
+Con.Open
+
+If Con.errors.count = 0 Then   
+   Response.Write "Connected OK"
+End If
+
+set rs=Server.CreateObject("ADODB.recordset")
+rs.Open "Select * from [user];", Con
+
+for each x in rs.fields
+  response.write(x.name)
+  response.write(" = ")
+  response.write(x.value)
+next
+%>
+
+
         <!--#include file ="Header.asp"-->
        
         <main class="wrapper">
         
         <h1>Book List</h1>
             
-          
-
-
-
-
-     <table>
+  <table>
   <tr>
+       <th>Sr. No.</th>
     <th>Firstname</th>
     <th>Lastname</th>
     <th>Address Line 1</th>
-  </tr>
-  <tr>
-    <td><%=request.querystring("firstName")%></td>
-    <td><%=request.querystring("lastName")%></td>
-    <td><%=request.querystring("address1")%></td>
-  </tr>
+  </tr>   
+     
+<%
+set rs=Server.CreateObject("ADODB.recordset")
+rs.Open "Select * from [user];", Con
+
+Do Until rs.EOF
   
-</table>
-       
+%>
+
+  
+     <tr>
+         <td><%=rs("id")%></td>
+  <td><%=rs("first_name")%></td>
+  <td><%=rs("last_name")%></td>
+  <td><%=rs("address_line_1")%></td>
+  </tr>
+ <%
+rs.Movenext
+Loop
+%> 
+          
+</table>     
         </main>
         
        
