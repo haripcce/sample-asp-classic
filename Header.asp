@@ -12,7 +12,7 @@
             </h1> 
             <nav>
             <h2>Main Navigation</h2>
-            <div id="burger-nav"></div>
+           
                 <ul>
                     <%
 

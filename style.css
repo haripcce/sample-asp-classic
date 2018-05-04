@@ -22,11 +22,19 @@ body{
     padding: 0 2%;
 }
 
-header{
-    background: #e5e5e5;
-    padding: 20px 0;
-    
+.book-create {
+    width: 96%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2%;
 }
+
+
+    
+    header {
+        background: #e5e5e5;
+        padding: 20px 0;
+    }
 
 header h1{
     margin: 0;
