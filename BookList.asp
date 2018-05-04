@@ -73,6 +73,7 @@ rs.Open "Select * from [user];", Con
     <th>Firstname</th>
     <th>Lastname</th>
     <th>Address Line 1</th>
+      <th>&nbsp;</th>
   </tr>   
      
 <%
@@ -89,6 +90,7 @@ Do Until rs.EOF
   <td><%=rs("first_name")%></td>
   <td><%=rs("last_name")%></td>
   <td><%=rs("address_line_1")%></td>
+  <td><a href="DeleteBook.asp?bookId=<%=rs("id")%>"><img src="images/delete.png" style="width:30px;height:30px;"/></a></td>
   </tr>
  <%
 rs.Movenext
