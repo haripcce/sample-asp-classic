@@ -29,29 +29,35 @@ th {
     <body>
         <%
             Currentpage = "BookList"
-
-            
-
-
-            %>
-
-        <%
 set Con=Server.CreateObject("ADODB.Connection")
 Con.ConnectionString = "Provider=SQLOLEDB;Data Source =localhost;Database=aspclassic;User Id=sa;Password=Hari1990"
 Con.Open
 
-If Con.errors.count = 0 Then   
-   Response.Write "Connected OK"
+           firstName = request.querystring("firstName")
+             lastName = request.querystring("lastName")
+             address1 = request.querystring("address1")
+            IF (firstName <> "" and lastName <> "" and address1 <> "") Then
+            sql="INSERT INTO [dbo].[user] ([first_name] ,[last_name] ,[address_line_1])"
+
+sql=sql & " VALUES "
+sql=sql & "('" & firstName & "',"
+sql=sql & "'" & lastName & "',"
+sql=sql & "'" & address1 & "')"
+  
+on error resume next
+Con.Execute sql,recaffected
+
 End If
+            %>
+
+        <%
+
+
 
 set rs=Server.CreateObject("ADODB.recordset")
 rs.Open "Select * from [user];", Con
 
-for each x in rs.fields
-  response.write(x.name)
-  response.write(" = ")
-  response.write(x.value)
-next
+
 %>
 
 
@@ -87,6 +93,8 @@ Do Until rs.EOF
  <%
 rs.Movenext
 Loop
+
+     Con.Close
 %> 
           
 </table>     
