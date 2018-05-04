@@ -10,6 +10,9 @@
     </head>
     
     <body>
+       <%
+            Currentpage = "BookCreate"
+            %>
         <!--#include file ="Header.asp"-->
        
         <main class="wrapper">
@@ -24,8 +27,8 @@
        <!--#include file="Footer.asp"-->
         
     </body>
-    
+ <script src="jquery-3.3.1.min.js"></script>   
 <script src="menu.js"></script>
-     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
 
 </html>
