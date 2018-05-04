@@ -57,7 +57,7 @@ End If
 set rs=Server.CreateObject("ADODB.recordset")
 rs.Open "Select * from [user];", Con
 
-
+count = 1
 %>
 
 
@@ -86,13 +86,14 @@ Do Until rs.EOF
 
   
      <tr>
-         <td><%=rs("id")%></td>
+         <td><%=count%></td>
   <td><%=rs("first_name")%></td>
   <td><%=rs("last_name")%></td>
   <td><%=rs("address_line_1")%></td>
   <td><a href="DeleteBook.asp?bookId=<%=rs("id")%>"><img src="images/delete.png" style="width:30px;height:30px;"/></a></td>
   </tr>
  <%
+     count=count+1
 rs.Movenext
 Loop
 
