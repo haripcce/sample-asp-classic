@@ -38,9 +38,7 @@ body{
 
 header h1{
     margin: 0;
-    text-indent: -10000px;
-    background: url(images/logo.png) no-repeat;
-    width: 130px;
+    
     float: left;
 }
 

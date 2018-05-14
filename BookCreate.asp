@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>Marble : Book Create</title>
+       
         <link href="style.css" rel="stylesheet" type="text/css">
         <meta name="viewport"
               content="width=device-width">
@@ -49,7 +49,7 @@ div {
        
         <main class="book-create">
         
-        <h1>Book Create</h1>
+        <h1>User Create</h1>
             
           <div>
   <form action="BookList.asp">

@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>Marble : Book List</title>
+       
         <link href="style.css" rel="stylesheet" type="text/css">
         <meta name="viewport"
               content="width=device-width">
@@ -65,7 +65,7 @@ count = 1
        
         <main class="wrapper">
         
-        <h1>Book List</h1>
+        <h1>User List</h1>
             
   <table>
   <tr>
